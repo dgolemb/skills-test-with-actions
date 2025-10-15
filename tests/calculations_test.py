@@ -34,6 +34,17 @@ def test_area_of_circle_zero_radius():
     assert result == 0
 
 
+def test_area_of_circle_negative_radius():
+    """Test with a negative radius."""
+    # Arrange
+    radius = -1
+
+    # Act & Assert
+    with pytest.raises(ValueError) as exc_info:
+        area_of_circle(radius)
+    assert str(exc_info.value) == "Radius cannot be negative"
+
+
 def test_get_nth_fibonacci_zero():
     """Test with n=0."""
     # Arrange
